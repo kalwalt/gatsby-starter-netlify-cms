@@ -6,6 +6,6 @@ description: My first gatsby blog post really...
 tags:
   - gatsby
 ---
-My first **Gatsby **blog post really... where they are? can't find anywhere, no blog page at all?
+My first **Gatsby** blog post really... where they are? can't find anywhere, no blog page at all?
 
 Investigating....

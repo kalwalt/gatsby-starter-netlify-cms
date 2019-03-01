@@ -1,14 +1,10 @@
 .icon {
   max-width: 400px;
-  //margin: 50px 4px 4px 0;
-
-  margin-left: -0.25rem
-  margin-right: 0rem
+  margin-left: -0.25rem;
+  margin-right: 0rem;
 
   svg {
-    //font-size: $display4-size;
-    font-size: 12px;
-    margin-bottom: 20px;
+    font-size: 14px;
 
     &[data-emergence='visible'] {
       opacity: 1;

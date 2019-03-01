@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
 import { Icon } from '../components/Icon'
+import LangSwitcher from '../components/LangSwitcher'
 
 const Navbar = class extends React.Component {
 
@@ -66,16 +67,7 @@ const Navbar = class extends React.Component {
         </Link>
       </div>
       <div className="navbar-end has-text-centered">
-        <a
-          className="navbar-item"
-          href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="icon">
-            <img src={github} alt="Github" />
-          </span>
-        </a>
+        <LangSwitcher />
       </div>
       </div>
     </div>

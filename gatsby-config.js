@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: "https://kalwalt-gatsby.netlify.com",
     title: 'Gatsby + Netlify CMS Starter',
     description: 'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
   },
@@ -44,8 +45,21 @@ module.exports = {
         name: 'images',
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: '',
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    {
+    resolve: `gatsby-plugin-sitemap`,
+    options: {
+      output: `/sitemap.xml`,
+      }
+    },
+    'gatsby-plugin-twitter',
     {
       resolve: 'gatsby-transformer-remark',
       options: {

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
+import { Icon } from '../components/Icon'
 
 const Navbar = class extends React.Component {
 
@@ -18,7 +19,6 @@ const Navbar = class extends React.Component {
          // Get the target from the "data-target" attribute
          const target = el.dataset.target;
          const $target = document.getElementById(target);
-
          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
          el.classList.toggle('is-active');
          $target.classList.toggle('is-active');
@@ -46,17 +46,20 @@ const Navbar = class extends React.Component {
       </div>
       <div id="navMenu" className="navbar-menu">
       <div className="navbar-start has-text-centered">
+        <Link className="navbar-item" to="/">
+          <Icon title="Home" name="home" />  Home
+        </Link>
         <Link className="navbar-item" to="/about">
-          About
+          <Icon title="About" name="question" />  About
         </Link>
         <Link className="navbar-item" to="/products">
-          Products
+          <Icon title="Products" name="image" /> Products
         </Link>
         <Link className="navbar-item" to="/blog">
-          Blog
+          <Icon title="Blog" name="pen-alt" /> Blog
         </Link>
         <Link className="navbar-item" to="/contact">
-          Contact
+          <Icon title="Contact" name="american-sign-language-interpreting" /> Contact
         </Link>
         <Link className="navbar-item" to="/contact/examples">
           Form Examples

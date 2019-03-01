@@ -1,6 +1,7 @@
 ---
+id: 01
 templateKey: 'home-page'
-path: .
+path: /
 title: Our Coffee
 image: /img/jumbotron.jpg
 #heading: What we offer

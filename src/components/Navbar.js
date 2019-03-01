@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
 import { Icon } from '../components/Icon'
 import LangSwitcher from '../components/LangSwitcher'
@@ -30,6 +29,7 @@ const Navbar = class extends React.Component {
  }
 
  render() {
+
    return (
 
   <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
@@ -67,7 +67,7 @@ const Navbar = class extends React.Component {
         </Link>
       </div>
       <div className="navbar-end has-text-centered">
-        <LangSwitcher />
+        <LangSwitcher slug=""/>
       </div>
       </div>
     </div>

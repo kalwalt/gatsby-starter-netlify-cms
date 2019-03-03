@@ -1,13 +1,18 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
+import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { StaticQuery, graphql } from "gatsby"
+import { IntlProvider } from 'react-intl';
+import 'intl';
 
 import Navbar from '../components/Navbar'
 import './all.sass'
 import 'font-awesome/css/font-awesome.css'
 import 'animate.css/animate.css'
 
-const TemplateWrapper = ({ children }) => (
+const Layout = ({ children, location, i18nMessages }) => {
+  return(
   <StaticQuery
     query={graphql`
       query HeadingQuery {
@@ -15,11 +20,26 @@ const TemplateWrapper = ({ children }) => (
             siteMetadata {
               title,
               description,
+              languages {
+                defaultLangKey
+                langs
+              }
             }
           }
         }
     `}
-    render={data => (
+    render={data => {
+      //const url = location.pathname;
+      const url = "localhost:8000";
+      const { langs, defaultLangKey } = data.site.siteMetadata.languages;
+      const langKey = getCurrentLangKey(langs, defaultLangKey, url);
+      const homeLink = `/${langKey}`.replace(`/${defaultLangKey}/`, '/');
+      const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map((item) => ({ ...item, link: item.link.replace(`/${defaultLangKey}/`, '/') }));
+      return (
+        <IntlProvider
+          locale={langKey}
+          messages={i18nMessages}
+        >
       <div>
         <Helmet>
           <html lang="en" />
@@ -38,11 +58,19 @@ const TemplateWrapper = ({ children }) => (
           <meta property="og:url" content="/" />
           <meta property="og:image" content="/img/og-image.jpg" />
         </Helmet>
-        <Navbar />
+        <Navbar langs={langsMenu} />
         <div>{children}</div>
       </div>
-    )}
+      </IntlProvider>
+    )
+   }}
   />
-)
+);
+};
 
-export default TemplateWrapper
+Layout.propTypes = {
+  children: PropTypes.func,
+}
+
+
+export default Layout

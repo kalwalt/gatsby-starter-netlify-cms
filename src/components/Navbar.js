@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import logo from '../img/logo.svg'
 import { Icon } from '../components/Icon'
-import LangSwitcher from '../components/LangSwitcher'
+//import LangSwitcher from '../components/LangSwitcher'
+import SelectLanguage from './SelectLanguage';
 
 const Navbar = class extends React.Component {
 
@@ -29,6 +30,8 @@ const Navbar = class extends React.Component {
  }
 
  render() {
+
+   const props = this.props;
 
    return (
 
@@ -67,7 +70,7 @@ const Navbar = class extends React.Component {
         </Link>
       </div>
       <div className="navbar-end has-text-centered">
-        <LangSwitcher slug=""/>
+        <SelectLanguage langs={props.langs} />
       </div>
       </div>
     </div>

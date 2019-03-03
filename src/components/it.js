@@ -1,5 +1,4 @@
 import React from 'react';
-//import Layout from './index';
 import Layout from 'Layout'
 import { addLocaleData } from 'react-intl';
 

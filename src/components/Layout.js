@@ -6,7 +6,7 @@ import { StaticQuery, graphql } from "gatsby"
 import { IntlProvider } from 'react-intl';
 import 'intl';
 
-import Navbar from '../components/Navbar-en'
+import Navbar from '../components/Navbar'
 import './all.sass'
 import 'font-awesome/css/font-awesome.css'
 import 'animate.css/animate.css'

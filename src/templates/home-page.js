@@ -60,6 +60,10 @@ export const homePageQuery = graphql`
       html
       frontmatter {
         title
+      },
+       fields{
+        slug
+
       }
     }
   }

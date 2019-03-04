@@ -5,11 +5,12 @@ import Layout from '../components/Layout'
 
 export default class IndexPage extends React.Component {
   render() {
+    //const { props } = this.props
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <Layout>
+      <Layout >
         <section className="section">
           <div className="container">
             <div className="content">

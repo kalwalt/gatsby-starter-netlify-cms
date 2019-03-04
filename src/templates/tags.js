@@ -1,10 +1,11 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import Layout from '../components/en'
 
 class TagRoute extends React.Component {
   render() {
+    const props = this.props;
     const posts = this.props.data.allMarkdownRemark.edges
     const postLinks = posts.map(post => (
       <li key={post.node.fields.slug}>
@@ -21,7 +22,7 @@ class TagRoute extends React.Component {
     } tagged with “${tag}”`
 
     return (
-      <Layout>
+      <Layout location={props.location}>
         <section className="section">
           <Helmet title={`${tag} | ${title}`} />
           <div className="container content">

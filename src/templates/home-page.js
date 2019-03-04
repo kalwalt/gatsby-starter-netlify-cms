@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import Layout from '../components/en'
 import Content, { HTMLContent } from '../components/Content'
 
 export const HomePageTemplate = ({ title, content, contentComponent }) => {
@@ -33,9 +33,12 @@ HomePageTemplate.propTypes = {
 
 const HomePage = ({ data }) => {
   const { markdownRemark: post } = data
+  //const props = this.props;
+    const props = { data };
+
 
   return (
-    <Layout>
+    <Layout location={props.location}>
       <HomePageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}

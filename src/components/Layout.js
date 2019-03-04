@@ -25,16 +25,24 @@ const Layout = ({ children, location, i18nMessages }) => {
                 langs
               }
             }
-          }
+          },
+          markdownRemark{
+           fields{
+            slug
+           }
+         }
         }
     `}
     render={data => {
       //const url = location.pathname;
-      const url = "localhost:8000";
+      //const url = "localhost:8000";
+      const { markdownRemark } = data;
+      const url = `http://localhost:8000/${markdownRemark.fields.slug}`;
       const { langs, defaultLangKey } = data.site.siteMetadata.languages;
       const langKey = getCurrentLangKey(langs, defaultLangKey, url);
       const homeLink = `/${langKey}`.replace(`/${defaultLangKey}/`, '/');
       const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url)).map((item) => ({ ...item, link: item.link.replace(`/${defaultLangKey}/`, '/') }));
+      console.log(langsMenu);
       return (
         <IntlProvider
           locale={langKey}

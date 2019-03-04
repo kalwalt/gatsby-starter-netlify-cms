@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import Layout from '../components/en'
 
 export default class BlogPage extends React.Component {
   render() {
     const { data } = this.props
+    //const { props } = this.props;
     const { edges: posts } = data.allMarkdownRemark
 
     return (

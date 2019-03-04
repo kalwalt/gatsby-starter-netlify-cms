@@ -53,7 +53,7 @@ const Navbar = class extends React.Component {
         <Link className="navbar-item" to="/">
           <Icon title="Home" name="home" />  Home
         </Link>
-        <Link className="navbar-item" to="/about">
+        <Link className="navbar-item" to={ props.langs[0].link + "/about" }>
           <Icon title="About" name="question" />  About
         </Link>
         <Link className="navbar-item" to="/products">
